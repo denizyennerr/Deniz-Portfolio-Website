@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Deniz's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+
+  <!-- Optional Custom CSS -->
+  <style>
+    @media (max-width: 768px) {
+      .posts {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .project-item {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #ffffff;
+      height: 100%;
+      min-height: 850px;
+    }
+
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-item header {
+      padding: 1.5rem 1.5rem 0.5rem;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+    }
+
+    .project-item header h2 {
+      font-size: 1.5rem;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .project-item .image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .project-item .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .project-item:hover .image img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1.5rem;
+    }
+
+    .project-item p {
+      margin: 0 0 1rem 0;
+      line-height: 1.6;
+    }
+
+    /* Default list styling - no bullets */
+    .project-item ul {
+      margin: 0.5rem 0 1rem 0;
+      padding-left: 0;
+      list-style-type: none;
+    }
+
+    .project-item li {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      padding-left: 0;
+    }
+
+    /* Add bullets to specific sections */
+    .project-item .highlights-list,
+    .project-item .achievements-list,
+    .project-item .features-list {
+      padding-left: 1.5rem;
+    }
+
+    .project-item .highlights-list li,
+    .project-item .achievements-list li,
+    .project-item .features-list li {
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .project-item .highlights-list li:before,
+    .project-item .achievements-list li:before,
+    .project-item .features-list li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #666;
+    }
+
+    .project-item ul.actions {
+      padding: 1rem 0 0 0;
+      margin: auto 0 0 0;
+    }
+
+    .project-item .button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .tech-stack {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .featured-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 900px;
+      height: 340px;
+      margin: 0 auto 1.5rem auto;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #f8f8f8;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+
+<!-- Wrapper -->
+<div id="wrapper" class="fade-in">
+
+  <!-- Intro -->
+  <div id="intro" class="text-center p-4">
+    <h1>Deniz Yener<br /></h1>
+    <p>
+      Proactive professional specializing in AI, data analytics and sustainable development.<br />
+      Confident in driving innovation and delivering data-oriented results. <br />
+      Dedicated to leveraging AI for sustainable societies to
+      create innovative and effective solutions.
+    </p>
+    <p>
+      <a href="assets/CV-DenizYener.pdf" target="_blank" download="CV-DenizYener.pdf" class="btn btn-primary">
+        Download CV
+      </a>
+    </p>
+    <ul class="actions list-unstyled">
+      <li>
+        <a href="#header" class="button icon solid solo fa-arrow-down scrolly">
+          Continue
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Header -->
+  <header id="header" class="text-center py-3">
+    <a href="index.html" class="logo">Check My Projects Out</a>
+  </header>
+
+  <!-- Nav -->
+  <nav id="nav" class="text-center mb-4">
+    <ul class="links list-inline">
+      <li class="list-inline-item active">
+        <a href="index.html">Projects</a>
+        <p style="font-size: 1.2em; font-weight: bold;"></p>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://denizportfolio.tilda.ws/" target="_blank">
+          <span class="label">Personal Website</span>
+        </a>
+    </ul>
+    <ul class="icons list-inline">
+      <li class="list-inline-item">
+        <a href="https://www.linkedin.com/in/deniz-yener-2509a51b4/" class="icon brands alt fa-linkedin"><span
+            target="_blank">
+          </span class="label">LinkedIn</span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://github.com/denizyennerr" class="icon brands alt fa-github" target="_blank">
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="mailto:denizyener1999@gmail.com" class="icon solid alt fa-envelope"><span
+            class="label">Email</span></a>
+        <!-- Substack link -->
+      <li class="list-inline-item">
+        <a href="https://substack.com/@denizyennerr" target="_blank" aria-label="Substack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
+            style="vertical-align: middle;">
+            <path d="M15 3.604H1v1.891h14v-1.89ZM1 7.208V16l7-3.926L15 16V7.208zM15 0H1v1.89h14z" />
+          </svg>
+          <span class="label">Substack</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <div id="main">
+    <div class="text-center mb-4">
+
+      <!-- Featured Post -->
+      <article class="post featured" style="max-width: 900px; margin: auto;">
+        <header class="major">
+          <h2><a href="https://github.com/denizyennerr/Heart-Disease-Prediction">Heart Disease Prediction Model</a>
+          </h2>
+        </header>
+        <a href="https://github.com/denizyennerr/Heart-Disease-Prediction" class="featured-image">
+          <img src="images/heart.jpg" alt="Heart Disease Prediction" />
+        </a>
+        <div class="project-content">
+          <p>
+            Developed a machine learning model to predict heart disease risk using patient data. This project focuses
+            on creating a reliable and accurate prediction system that can assist healthcare professionals in early
+            diagnosis.
+          </p>
+          <p>
+            <b>Key achievements:</b>
+          </p>
+          <ul class="achievements-list">
+            <li>Achieved 92% accuracy in heart disease prediction</li>
+            <li>Implemented multiple ML algorithms for comparison</li>
+            <li>Created an intuitive user interface for predictions</li>
+            <li>Optimized model for high recall to minimize false negatives</li>
+            <li>Conducted thorough feature importance analysis</li>
+          </ul>
+          <p class="tech-stack"><b>Technologies used:</b> Python, Scikit-learn, Pandas, NumPy, Matplotlib</p>
+          <ul class="actions special">
+            <li><a href="https://github.com/denizyennerr/Heart-Disease-Prediction" class="button large">View
+                Project</a></li>
+          </ul>
+        </div>
+      </article>
+      </section>
+
+
+      <!-- Posts -->
+      <section class="posts">
+        <article class="project-item">
+          <header>
+            <h2><a href="https://github.com/denizyennerr/DS-Weather-EDA">Exploratory Data Analysis on Global Weather
+                Patterns</a></h2>
+          </header>
+          <a href="https://github.com/denizyennerr/DS-Weather-EDA" class="image">
+            <img src="images/high-temperature-weather-.webp" alt="Weather Analysis" />
+          </a>
+          <div class="project-content">
+            <p>
+              Explored the impacts of climate change using Exploratory Data Analysis (EDA) on global weather patterns.
+            </p>
+            <p>
+              <b>Project Highlights:</b>
+            </p>
+            <ul class="highlights-list">
+              <li>Investigated weather trends across Spain, Brazil, and Indonesia</li>
+              <li>Identified key correlations between temperature, humidity, precipitation, and UV index</li>
+              <li>Analyzed over 32,000 rows of data from 205 countries</li>
+            </ul>
+            <p class="tech-stack"><b>Libraries used:</b> Pandas, Numpy, Seaborn, Matplotlib, Plotly</p>
+            <ul class="actions special">
+              <li><a href="https://github.com/denizyennerr/DS-Weather-EDA" class="button large">View Project</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <header>
+            <h2><a href="https://github.com/denizyennerr/Beijing-PM2.5-Air-Quality-Prediction">Beijing PM2.5 Air Quality
+                Prediction</a></h2>
+          </header>
+          <a href="https://github.com/denizyennerr/Beijing-PM2.5-Air-Quality-Prediction" class="image">
+            <img src="images/Factory_in_China.webp" alt="Beijing Air Quality" />
+          </a>
+          <div class="project-content">
+            <p>
+              Developed a machine learning model to predict PM2.5 air quality levels in Beijing using historical data
+              from 2010-2014.
+              This project combines environmental science with data analytics to understand and predict air pollution
+              patterns.
+            </p>
+            <p>
+              <b>Key achievements:</b>
+            </p>
+            <ul class="achievements-list">
+              <li>Built predictive models achieving 85% accuracy using advanced ML algorithms</li>
+              <li>Implemented interactive data visualizations for trend analysis</li>
+              <li>Analyzed 5 years of environmental data with 438,000+ data points</li>
+              <li>Identified key correlations between weather conditions and PM2.5 levels</li>
+              <li>Developed a robust data preprocessing pipeline for handling missing values</li>
+            </ul>
+            <p class="tech-stack"><b>Technologies used:</b> Python, Pandas, Scikit-learn, Plotly, Winsorizer, Jupyter
+              Notebook</p>
+            <ul class="actions special">
+              <li><a href="https://github.com/denizyennerr/Beijing-PM2.5-Air-Quality-Prediction"
+                  class="button large">View Project</a></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section class="alt">
+            <h3>Location</h3>
+            <p style="font-size: 1.2em; font-weight: bold;"><a href="#">Porto, Portugal 4000-084</a></p>
+          </section>
+          <section>
+            <h3>Phone</h3>
+            <p style="font-size: 1.2em; font-weight: bold;"><a href="#">(351) 921-6977</a></p>
+          </section>
+          <section>
+            <h3>Email</h3>
+            <p style="font-size: 1.2em; font-weight: bold;"><a href="#">denizyener1999@gmail.com</a></p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li><a href="https://www.linkedin.com/in/deniz-yener-2509a51b4/" class="icon brands alt fa-linkedin"><span
+                    class="label">linkedin</span></a></li>
+              <li><a href="https://github.com/denizyennerr" class="icon brands alt fa-github"><span
+                    class="label">GitHub</span></a></li>
+              <li><a href="mailto:denizyener1999@gmail.com" class="icon solid alt fa-envelope"><span
+                    class="label">Email</span></a></li>
+              <li><a href="https://substack.com/@denizyennerr" target="_blank" aria-label="Substack">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
+                    style="vertical-align: middle;">
+                    <path d="M15 3.604H1v1.891h14v-1.89ZM1 7.208V16l7-3.926L15 16V7.208zM15 0H1v1.89h14z" />
+                  </svg>
+                  <span class="label">Substack</span></a></li>
+          </section>
+        </section>
+      </footer>
+    </div>
+    </section>
+    </section>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    </body>
+
+</html>
