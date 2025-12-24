@@ -11,245 +11,260 @@
   </noscript>
 
   <!-- Optional Custom CSS -->
-  <style>
-    @media (max-width: 768px) {
-      .posts {
-        grid-template-columns: 1fr;
-      }
-    }
-
+<style>
+  @media (max-width: 768px) {
     .posts {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
+      grid-template-columns: 1fr;
     }
+  }
 
-    .project-item {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background: #ffffff;
-      height: 100%;
-      min-height: 850px;
-    }
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
-    .project-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
+  .project-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+    height: 100%;
+    min-height: 850px;
+  }
 
-    .project-item header {
-      padding: 1.5rem 1.5rem 0.5rem;
-      min-height: 120px;
-      display: flex;
-      align-items: center;
-    }
+  .project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
 
-    .project-item header h2 {
-      font-size: 1.5rem;
-      margin: 0;
-      line-height: 1.4;
-    }
+  .project-item header {
+    padding: 1.5rem 1.5rem 0.5rem;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+  }
 
-    .project-item .image {
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
+  .project-item header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1.4;
+  }
 
-    .project-item .image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
+  .project-item .image {
+    width: 100%;
+    height: auto !important;
+    overflow: visible;
+    flex-shrink: 0;
+    display: block;
+  }
 
-    .project-item:hover .image img {
-      transform: scale(1.05);
-    }
+  .project-item .image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
+  }
 
-    .project-content {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      padding: 1.5rem;
-    }
+  .project-item:hover .image img {
+    transform: scale(1.02);
+  }
 
-    .project-item p {
-      margin: 0 0 1rem 0;
-      line-height: 1.6;
-    }
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem;
+  }
 
-    /* Default list styling - no bullets */
-    .project-item ul {
-      margin: 0.5rem 0 1rem 0;
-      padding-left: 0;
-      list-style-type: none;
-    }
+  .project-item p {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+  }
 
-    .project-item li {
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-      padding-left: 0;
-    }
+  .project-item ul {
+    margin: 0.5rem 0 1rem 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
 
-    /* Add bullets to specific sections */
-    .project-item .highlights-list,
-    .project-item .achievements-list,
-    .project-item .features-list {
-      padding-left: 1.5rem;
-    }
+  .project-item li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    padding-left: 0;
+  }
 
-    .project-item .highlights-list li,
-    .project-item .achievements-list li,
-    .project-item .features-list li {
-      position: relative;
-      padding-left: 1.2rem;
-    }
+  .project-item .highlights-list,
+  .project-item .achievements-list,
+  .project-item .features-list {
+    padding-left: 1.5rem;
+  }
 
-    .project-item .highlights-list li:before,
-    .project-item .achievements-list li:before,
-    .project-item .features-list li:before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #666;
-    }
+  .project-item .highlights-list li,
+  .project-item .achievements-list li,
+  .project-item .features-list li {
+    position: relative;
+    padding-left: 1.2rem;
+  }
 
-    .project-item ul.actions {
-      padding: 1rem 0 0 0;
-      margin: auto 0 0 0;
-    }
+  .project-item .highlights-list li:before,
+  .project-item .achievements-list li:before,
+  .project-item .features-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+  }
 
-    .project-item .button {
-      width: 100%;
-      text-align: center;
-    }
+  .tech-stack {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
 
-    .tech-stack {
-      margin-top: auto;
-      padding-top: 1rem;
-    }
+  /* --- FIXED BUTTON SECTION --- */
+  ul.actions.special {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Consistent gap between buttons */
+    padding: 1rem 0 0 0;
+    margin: auto 0 0 0;
+    width: 100%;
+  }
 
-    .card-img-top {
-      height: 250px;
-      object-fit: cover;
-    }
+  ul.actions.special li {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Ensures the button itself is centered in the li */
+    padding: 0;
+  }
 
-    /* Add frame and layout styles for the featured project */
-    .post.featured {
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 2rem;
-      background: #ffffff;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
+  ul.actions.special .button {
+    /* 1. Use Flexbox to center text perfectly */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .featured-content-wrapper {
-      display: flex;
-      flex-direction: column;
-      /* Stack items vertically */
-      align-items: center;
-      /* Center items horizontally */
-      gap: 2rem;
-      /* Space between image and text */
-    }
+    /* 2. Dimensions */
+    width: 100%;
+    max-width: 300px;
+    min-height: 60px; /* Forces both buttons to be the same height */
+    height: auto;
+    
+    /* 3. Text Handling */
+    white-space: normal; /* Allows text to wrap */
+    line-height: 1.2;    /* Tightens the gap between the two lines of text */
+    text-align: center;
+    
+    /* 4. Spacing */
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  /* --------------------------- */
 
-    .featured-content-wrapper .featured-image {
-      flex: none;
-      /* Remove flex-grow */
-      max-width: 100%;
-    }
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
 
-    .featured-content-wrapper .project-content {
-      flex: none;
-      /* Remove flex-grow */
-      text-align: left;
-      /* Align text to the left for columns */
-      width: 100%;
-    }
+  .post.featured {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
 
-    /* Remove the old wrapper style */
-    .featured-description-wrapper {
-      display: block;
-    }
+  .featured-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 
-    /* New style for the achievements section */
-    .achievements-section {
-      margin: 1.5rem 0;
-    }
+  .featured-content-wrapper .featured-image {
+    flex: none;
+    max-width: 100%;
+  }
 
-    .achievements-section p {
-      margin: 0 0 0.5rem 0;
-    }
+  .featured-content-wrapper .project-content {
+    flex: none;
+    text-align: left;
+    width: 100%;
+  }
 
-    .achievements-section ul {
-      margin: 0;
-      padding-left: 1.5rem;
-      /* Ensures indentation for bullets */
-      list-style-position: outside;
-    }
+  .featured-description-wrapper {
+    display: block;
+  }
 
-    .featured-image {
-      display: block;
-      /* Changed from flex */
-      width: 100%;
-      height: auto;
-      /* Adjust height automatically */
-      max-height: 400px;
-      margin: 0;
-      /* Removed auto margin */
-      overflow: hidden;
-      border-radius: 12px;
-      background: #f8f8f8;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
+  .achievements-section {
+    margin: 1.5rem 0;
+  }
 
-    .featured-image img {
-      width: 100%;
-      height: 100%;
-      max-width: 100%;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto;
-      transition: transform 0.3s ease;
-    }
+  .achievements-section p {
+    margin: 0 0 0.5rem 0;
+  }
 
-    #nav .links a {
-      font-size: 1.2em;
-      font-weight: 600;
-    }
+  .achievements-section ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-position: outside;
+  }
 
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
+  .featured-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f8f8f8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
 
-    /* Reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 600ms ease, transform 600ms ease;
-      will-change: opacity, transform;
-    }
+  .featured-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+  }
 
-    .reveal.in-view {
-      opacity: 1;
-      transform: none;
-    }
+  #nav .links a {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
 
-    /* Optional stagger for children inside a container */
-    .reveal-stagger>.reveal {
-      transition-delay: calc(var(--stagger, 0) * 80ms);
-    }
-  </style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms ease, transform 600ms ease;
+    will-change: opacity, transform;
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-stagger>.reveal {
+    transition-delay: calc(var(--stagger, 0) * 80ms);
+  }
+</style>
 </head>
 
 <body class="is-preload">
@@ -267,7 +282,7 @@
       innovative and effective solutions.
       </p>
       <p style="animation: fadeIn 2s ease-in"></p>
-      <a href="assets/Deniz Yener_Resume.pdf" target="_blank" download="CV-DenizYener.pdf" class="btn btn-primary">
+      <a href="assets/Resume-DenizY.pdf" target="_blank" download="Resume-DenizY.pdf" class="btn btn-primary">
         Download CV
       </a>
       </p>
@@ -335,8 +350,7 @@
         <article class="post featured reveal" style="max-width: 1100px; margin: 2rem auto">
           <header class="major">
             <h2>
-              <a href="https://github.com/denizyennerr/EEG-Chatbot-Generative-AI.git">Voice Enabled Medical Chatbot
-                Project</a>
+              <a href="https://github.com/denizyennerr/EEG-Chatbot-Generative-AI.git">Voice Enabled Medical Chatbot</a>
             </h2>
           </header>
           <div class="featured-content-wrapper">
@@ -387,6 +401,79 @@
 
         <!-- Posts -->
         <section id="projects" class="posts reveal-stagger">
+          <article class="project-item reveal">
+            <header>
+              <h2>
+                <a href="AI Adoption Readiness Assessment">AI Adoption Readiness Assessment</a>
+              </h2>
+            </header>
+            <a href="https://github.com/denizyennerr/ai-readiness-assessment.git" class="image" style="height: auto; display: block;">
+               <img src="images/aireadinessassessment.png" alt="AI Adoption Readiness Assessment" style="width: 100%; height: auto; object-fit: contain;" />
+            </a>
+            <div class="project-content">
+              <p>
+               A comprehensive AI Adoption Readiness Assessment designed for Coresbond to evaluate the organization's preparedness for integrating AI technologies. 
+               This assessment covers key areas such as data infrastructure, talent capabilities, ethical considerations, and strategic alignment to evaluate the organization's readiness to ensure successful AI implementation.
+              </p>
+              <p>
+                <b>Key achievements:</b>
+              </p>
+              <ul class="achievements-list">
+                <li>The 95% MIT report shows that the "vast majority" of organizations, including SMEs, "remain stuck with no measurable P&L impact" from their AI initiatives (Challapally et al., 2025).</li>
+                <li>A structured questionnaire was employed to elicit feedback from leading professionals regarding the tool's efficacy in assessing AI adoption and usage efficiency. </li>
+                <li>By providing a systematic assessment of strategic maturity and regulatory viability, the tool equips SMEs to transition from exploratory, peripheral AI use to targeted, core operational integration, thereby maximising the potential for measurable financial returns and ensuring legal operational resilience in a regulated environment.</li>
+              </ul>
+              <p class="tech-stack">
+                <b>Technologies used:</b> TypeScript, CSS, HTML, Json
+              </p>
+              <ul class="actions special">
+                <li>
+                  <a href="https://github.com/denizyennerr/ai-readiness-assessment.git" class="button large">View Project</a>
+                </li>
+                <li>
+                  <a href="https://ai-readiness-assessment.tech/" target="_blank" class="button large primary">View AI Readiness Assessment</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-item reveal">
+            <header>
+              <h2>
+                <a href="https://github.com/denizyennerr/Heart-Disease-Prediction">Nasa Earth Observation Hackathon</a>
+              </h2>
+            </header>
+            <a href="https://github.com/denizyennerr/DataCenter-NASA-hackathon.git" class="image">
+              <img src="images/nasa.png" alt="NASA Data Center" />
+            </a>
+            <div class="project-content">
+              <p>
+                Kartta is a dashboard that helps urban planners, city governments, and policymakers understand the environmental and social risks associated with the construction and operation of data centers in cities.
+              </p>
+              <p>
+                <b>Key achievements:</b>
+              </p>
+              <ul class="achievements-list">
+                <li>We are a data-driven platform that uses a wide range of environmental and urban datasets to generate a comprehensive overview of cities and human settlements. </li>
+                <li>By combining NASA satellite observations with local information (water resources, energy supply, population density, and household consumption patterns), Kartta creates an integrated picture of how urban areas function and evolve.</li>
+                <li>This data fusion allows planners and decision-makers to make more accurate, evidence-based decisions about where to locate new data centers and how to improve existing urban areas affected by current ones. </li>
+                <li>
+                  In short, we turn complex, multi-source data into clear insights for sustainable urban planning related to data center constructions and maintenance.</li>
+              </ul>
+              <p class="tech-stack">
+                <b>Technologies used:</b> Python, Streamlit, QGIS, Figma, Scikit-learn, Pandas, NumPy
+              </p>
+              <ul class="actions special">
+                <li>
+                  <a href="https://github.com/denizyennerr/DataCenter-NASA-hackathon.git" class="button large">View Project</a>
+                </li>
+                <li>
+                  <a href="images/streamlit_app_datacenters.webm" target="_blank" class="button large primary">Watch Demo Video</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+
           <article class="project-item reveal">
             <header>
               <h2>
@@ -501,7 +588,7 @@
             <section>
               <h3>Phone</h3>
               <p style="font-size: 1.2em; font-weight: bold">
-                <a href="tel:+33767292698">(+33) 7 67 29 26 98</a>
+                <a href="tel:+358466411025">(+358) 466 411025</a>
               </p>
             </section>
             <section>
@@ -511,29 +598,35 @@
               </p>
             </section>
             <section>
-              <h3>Social</h3>
-              <ul class="icons alt">
-                <li>
-                  <a href="https://www.linkedin.com/in/deniz-yener-2509a51b4/" class="icon brands alt fa-linkedin"><span
-                      class="label">Linkedin</span></a>
-                </li>
-                <li>
-                  <a href="https://github.com/denizyennerr" class="icon brands alt fa-github"><span
-                      class="label">GitHub</span></a>
-                </li>
-                <li>
-                  <a href="mailto:denizyener1999@gmail.com" class="icon solid alt fa-envelope"><span
-                      class="label">Email</span></a>
-                </li>
-                <li>
-                  <a href="https://substack.com/@denizyennerr" target="_blank" aria-label="Substack">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                      viewBox="0 0 16 16" style="vertical-align: middle">
-                      <path d="M15 3.604H1v1.891h14v-1.89ZM1 7.208V16l7-3.926L15 16V7.208zM15 0H1v1.89h14z" />
-                    </svg>
-                    <span class="label">Substack</span></a>
-                </li>
-              </ul>
+              <div class="social-aligned" style="display: flex; align-items: center;gap: 30px; margin-top: 1.5rem;">
+                <h3 style="margin: 0; white-space: nowrap; line-height: 1;"
+                >Social</h3>
+                <ul class="icons alt" style="margin: 0; padding: 0; display: flex; align-items: center; gap: 15px; list-style: none;">
+                  <li style="margin: 0; padding: 0; display: flex; align-items: center;">
+                    <a href="https://www.linkedin.com/in/deniz-yener-2509a51b4/" class="icon brands alt fa-linkedin" style="display: flex; align-items: center; justify-content: center;">
+                      <span class="label">Linkedin</span>
+                    </a>
+                  </li>
+                  <li style="margin: 0; padding: 0; display: flex; align-items: center;">
+                    <a href="https://github.com/denizyennerr" class="icon brands alt fa-github" style="display: flex; align-items: center; justify-content: center;">
+                      <span class="label">GitHub</span>
+                    </a>
+                  </li>
+                  <li style="margin: 0; padding: 0; display: flex; align-items: center;">
+                    <a href="mailto:denizyener1999@gmail.com" class="icon solid alt fa-envelope" style="display: flex; align-items: center; justify-content: center;">
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+                  <li style="margin: 0; padding: 0; display: flex; align-items: center;">
+                    <a href="https://substack.com/@denizyennerr" target="_blank" aria-label="Substack" style="display: flex; align-items: center; gap: 5px; border-bottom: none;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="display: block;">
+                        <path d="M15 3.604H1v1.891h14v-1.89ZM1 7.208V16l7-3.926L15 16V7.208zM15 0H1v1.89h14z" />
+                      </svg>
+                      <span class="label" style="color: #444; font-size: 0.9em;">Substack</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </section>
           </section>
         </footer>
